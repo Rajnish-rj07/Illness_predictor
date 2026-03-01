@@ -1,0 +1,71 @@
+{
+  "agent_id": "",
+  "channel": "chat",
+  "last_modification_timestamp": 1772352572236,
+  "agent_name": "Symptom Checker",
+  "response_engine": {
+    "type": "retell-llm",
+    "llm_id": "llm_a14248cd968839055d49bb922152",
+    "version": 2
+  },
+  "language": "en-US",
+  "data_storage_setting": "everything",
+  "opt_in_signed_url": false,
+  "version": 2,
+  "is_published": false,
+  "version_title": "Illness_predictor",
+  "post_call_analysis_model": "gpt-4.1-mini",
+  "pii_config": {
+    "mode": "post_call",
+    "categories": []
+  },
+  "post_chat_analysis_model": "gpt-4.1-mini",
+  "retellLlmData": {
+    "llm_id": "llm_a14248cd968839055d49bb922152",
+    "version": 2,
+    "model": "gpt-4.1",
+    "tool_call_strict_mode": true,
+    "general_tools": [
+      {
+        "type": "end_call",
+        "name": "end_call",
+        "description": "End the call when user has to leave (like says bye) or you are instructed to do so."
+      },
+      {
+        "headers": {},
+        "parameter_type": "json",
+        "execution_message_type": "prompt",
+        "method": "POST",
+        "query_params": {},
+        "description": "",
+        "type": "custom",
+        "url": "https://abranchiate-amada-abdicative.ngrok-free.dev",
+        "args_at_root": false,
+        "timeout_ms": 120000,
+        "speak_after_execution": true,
+        "name": "predict_illness",
+        "response_variables": {},
+        "speak_during_execution": false
+      }
+    ],
+    "start_speaker": "user",
+    "begin_message": "",
+    "knowledge_base_ids": [],
+    "kb_config": {
+      "top_k": 3,
+      "filter_score": 0.6
+    },
+    "last_modification_timestamp": 1772352572227,
+    "is_published": false,
+    "mcps": [
+      {
+        "name": "predict_illness",
+        "headers": {},
+        "id": "mcp-1772346959899",
+        "query_params": {},
+        "url": "https://abranchiate-amada-abdicative.ngrok-free.dev",
+        "timeout_ms": 10000
+      }
+    ]
+  }
+}
