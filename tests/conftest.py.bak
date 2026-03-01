@@ -1,0 +1,92 @@
+"""
+Pytest configuration and fixtures for the Illness Prediction System.
+"""
+
+import pytest
+import sys
+from pathlib import Path
+
+# Add project root to path
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from src.database.models import Base
+from config.settings import settings
+
+
+@pytest.fixture(scope="session")
+def test_db_engine():
+    """
+    Create a test database engine.
+    Uses in-memory SQLite for fast testing.
+    """
+    engine = create_engine("sqlite:///:memory:", echo=False)
+    Base.metadata.create_all(engine)
+    yield engine
+    Base.metadata.drop_all(engine)
+
+
+@pytest.fixture(scope="function")
+def test_db_session(test_db_engine):
+    """
+    Create a test database session.
+    Rolls back after each test to ensure isolation.
+    """
+    connection = test_db_engine.connect()
+    transaction = connection.begin()
+    Session = sessionmaker(bind=connection)
+    session = Session()
+    
+    yield session
+    
+    session.close()
+    transaction.rollback()
+    connection.close()
+
+
+@pytest.fixture
+def sample_symptom_vector():
+    """Sample symptom vector for testing."""
+    return {
+        "symptoms": {
+            "fever": {
+                "present": True,
+                "severity": 8,
+                "duration": "1-3d",
+                "description": "High fever for 2 days"
+            },
+            "headache": {
+                "present": True,
+                "severity": 6,
+                "duration": "1-3d",
+                "description": "Persistent headache"
+            }
+        },
+        "question_count": 2,
+        "confidence_threshold_met": False
+    }
+
+
+@pytest.fixture
+def sample_session_data():
+    """Sample session data for testing."""
+    return {
+        "session_id": "test-session-123",
+        "user_id": "anonymous-user-456",
+        "channel": "web",
+        "language": "en",
+        "status": "active"
+    }
+
+
+@pytest.fixture
+def sample_prediction_data():
+    """Sample prediction data for testing."""
+    return {
+        "illness": "influenza",
+        "confidence_score": 0.85,
+        "severity": "moderate",
+        "rank": 1
+    }
