@@ -1,0 +1,78 @@
+{
+  "quick_test_scripts": [
+    {
+      "test_id": "cold_001",
+      "name": "Common Cold",
+      "script": [
+        "I have a runny nose and I've been sneezing a lot",
+        "Yes, I also have a sore throat",
+        "No fever, just feeling tired"
+      ]
+    },
+    {
+      "test_id": "flu_001",
+      "name": "Influenza",
+      "script": [
+        "I have a high fever and body aches",
+        "It started two days ago. I also have a headache and chills",
+        "Yes, I have a dry cough"
+      ]
+    },
+    {
+      "test_id": "migraine_001",
+      "name": "Migraine",
+      "script": [
+        "I have a severe headache on one side of my head",
+        "Yes, light bothers me and I feel nauseous",
+        "It's been going on for about 4 hours"
+      ]
+    },
+    {
+      "test_id": "allergy_001",
+      "name": "Allergies",
+      "script": [
+        "My eyes are itchy and watery, and I keep sneezing",
+        "It happens mostly when I'm outside. No fever",
+        "Yes, my nose is congested too"
+      ]
+    },
+    {
+      "test_id": "gastro_001",
+      "name": "Gastroenteritis",
+      "script": [
+        "I have stomach pain and diarrhea",
+        "Started yesterday after eating. I also feel nauseous",
+        "Yes, I vomited once and have a slight fever"
+      ]
+    },
+    {
+      "test_id": "strep_001",
+      "name": "Strep Throat",
+      "script": [
+        "My throat hurts really bad when I swallow",
+        "Yes, I have a fever and my throat looks red with white spots",
+        "No cough, but my neck glands are swollen"
+      ]
+    },
+    {
+      "test_id": "uti_001",
+      "name": "UTI",
+      "script": [
+        "I have pain when I urinate and need to go frequently",
+        "Yes, there's a burning sensation and my urine looks cloudy",
+        "No fever or back pain, just the urinary symptoms"
+      ]
+    },
+    {
+      "test_id": "emergency_001",
+      "name": "Emergency - Chest Pain",
+      "script": [
+        "I have severe chest pain",
+        "It's spreading to my arm and I'm sweating",
+        "Should I go to the hospital?"
+      ],
+      "note": "Should trigger emergency response"
+    }
+  ],
+  "usage_instructions": "Copy each script array and paste messages one at a time into Retell AI simulation"
+}

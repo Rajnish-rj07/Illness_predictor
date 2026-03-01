@@ -1,0 +1,351 @@
+{
+  "test_cases": [
+    {
+      "id": "test_001",
+      "name": "Common Cold - Simple Symptoms",
+      "description": "User reports basic cold symptoms",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "I have a runny nose and I've been sneezing a lot",
+          "expected_behavior": "System should extract symptoms and ask follow-up questions"
+        },
+        {
+          "turn": 2,
+          "user_message": "Yes, I also have a sore throat",
+          "expected_behavior": "System should continue gathering symptoms"
+        },
+        {
+          "turn": 3,
+          "user_message": "No fever, just feeling tired",
+          "expected_behavior": "System should provide prediction for common cold"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Common Cold",
+        "confidence_range": "0.6-0.9",
+        "severity": "mild"
+      }
+    },
+    {
+      "id": "test_002",
+      "name": "Flu - Multiple Symptoms",
+      "description": "User reports flu-like symptoms with fever",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "I have a high fever and body aches",
+          "expected_behavior": "System should recognize serious symptoms and ask about duration"
+        },
+        {
+          "turn": 2,
+          "user_message": "It started two days ago. I also have a headache and chills",
+          "expected_behavior": "System should ask about respiratory symptoms"
+        },
+        {
+          "turn": 3,
+          "user_message": "Yes, I have a dry cough",
+          "expected_behavior": "System should provide flu prediction and recommend medical attention"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Influenza (Flu)",
+        "confidence_range": "0.7-0.95",
+        "severity": "moderate"
+      }
+    },
+    {
+      "id": "test_003",
+      "name": "Migraine - Specific Symptoms",
+      "description": "User describes migraine symptoms",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "I have a severe headache on one side of my head",
+          "expected_behavior": "System should ask about headache characteristics"
+        },
+        {
+          "turn": 2,
+          "user_message": "Yes, light bothers me and I feel nauseous",
+          "expected_behavior": "System should ask about duration and triggers"
+        },
+        {
+          "turn": 3,
+          "user_message": "It's been going on for about 4 hours",
+          "expected_behavior": "System should predict migraine and suggest treatment"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Migraine",
+        "confidence_range": "0.65-0.85",
+        "severity": "moderate"
+      }
+    },
+    {
+      "id": "test_004",
+      "name": "Allergies - Seasonal Symptoms",
+      "description": "User reports allergy symptoms",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "My eyes are itchy and watery, and I keep sneezing",
+          "expected_behavior": "System should ask about timing and triggers"
+        },
+        {
+          "turn": 2,
+          "user_message": "It happens mostly when I'm outside. No fever",
+          "expected_behavior": "System should ask about nasal symptoms"
+        },
+        {
+          "turn": 3,
+          "user_message": "Yes, my nose is congested too",
+          "expected_behavior": "System should predict allergies"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Allergic Rhinitis",
+        "confidence_range": "0.7-0.9",
+        "severity": "mild"
+      }
+    },
+    {
+      "id": "test_005",
+      "name": "Gastroenteritis - Digestive Issues",
+      "description": "User reports stomach problems",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "I have stomach pain and diarrhea",
+          "expected_behavior": "System should ask about onset and other symptoms"
+        },
+        {
+          "turn": 2,
+          "user_message": "Started yesterday after eating. I also feel nauseous",
+          "expected_behavior": "System should ask about fever and vomiting"
+        },
+        {
+          "turn": 3,
+          "user_message": "Yes, I vomited once and have a slight fever",
+          "expected_behavior": "System should predict gastroenteritis and advise hydration"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Gastroenteritis",
+        "confidence_range": "0.65-0.85",
+        "severity": "moderate"
+      }
+    },
+    {
+      "id": "test_006",
+      "name": "Strep Throat - Throat Infection",
+      "description": "User reports severe throat pain",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "My throat hurts really bad when I swallow",
+          "expected_behavior": "System should ask about fever and throat appearance"
+        },
+        {
+          "turn": 2,
+          "user_message": "Yes, I have a fever and my throat looks red with white spots",
+          "expected_behavior": "System should ask about other symptoms"
+        },
+        {
+          "turn": 3,
+          "user_message": "No cough, but my neck glands are swollen",
+          "expected_behavior": "System should predict strep throat and recommend doctor visit"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Strep Throat",
+        "confidence_range": "0.7-0.9",
+        "severity": "moderate"
+      }
+    },
+    {
+      "id": "test_007",
+      "name": "Asthma - Breathing Difficulty",
+      "description": "User reports breathing problems",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "I'm having trouble breathing and wheezing",
+          "expected_behavior": "System should recognize urgent symptoms and ask about triggers"
+        },
+        {
+          "turn": 2,
+          "user_message": "It gets worse when I exercise. I also have chest tightness",
+          "expected_behavior": "System should ask about history and current severity"
+        },
+        {
+          "turn": 3,
+          "user_message": "I've had this before. It's manageable right now",
+          "expected_behavior": "System should predict asthma and suggest using inhaler"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Asthma",
+        "confidence_range": "0.65-0.85",
+        "severity": "moderate"
+      }
+    },
+    {
+      "id": "test_008",
+      "name": "UTI - Urinary Symptoms",
+      "description": "User reports urinary tract infection symptoms",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "I have pain when I urinate and need to go frequently",
+          "expected_behavior": "System should ask about other urinary symptoms"
+        },
+        {
+          "turn": 2,
+          "user_message": "Yes, there's a burning sensation and my urine looks cloudy",
+          "expected_behavior": "System should ask about fever and back pain"
+        },
+        {
+          "turn": 3,
+          "user_message": "No fever or back pain, just the urinary symptoms",
+          "expected_behavior": "System should predict UTI and recommend seeing doctor"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Urinary Tract Infection",
+        "confidence_range": "0.7-0.9",
+        "severity": "mild-moderate"
+      }
+    },
+    {
+      "id": "test_009",
+      "name": "Anxiety - Mental Health",
+      "description": "User reports anxiety symptoms",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "My heart is racing and I feel very nervous",
+          "expected_behavior": "System should ask about triggers and other symptoms"
+        },
+        {
+          "turn": 2,
+          "user_message": "I'm sweating and having trouble breathing. It happens suddenly",
+          "expected_behavior": "System should ask about chest pain and duration"
+        },
+        {
+          "turn": 3,
+          "user_message": "No chest pain. These episodes last about 10 minutes",
+          "expected_behavior": "System should suggest anxiety/panic and recommend professional help"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Anxiety/Panic Attack",
+        "confidence_range": "0.6-0.8",
+        "severity": "moderate"
+      }
+    },
+    {
+      "id": "test_010",
+      "name": "Dehydration - Multiple Indicators",
+      "description": "User reports dehydration symptoms",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "I feel dizzy and very thirsty",
+          "expected_behavior": "System should ask about fluid intake and other symptoms"
+        },
+        {
+          "turn": 2,
+          "user_message": "I haven't been drinking much water. My mouth is dry and I have a headache",
+          "expected_behavior": "System should ask about urine output and activity"
+        },
+        {
+          "turn": 3,
+          "user_message": "I've been exercising in the heat and haven't urinated much",
+          "expected_behavior": "System should predict dehydration and advise immediate hydration"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Dehydration",
+        "confidence_range": "0.7-0.9",
+        "severity": "moderate"
+      }
+    },
+    {
+      "id": "test_011",
+      "name": "Vague Symptoms - Low Confidence",
+      "description": "User provides unclear symptoms",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "I just don't feel well",
+          "expected_behavior": "System should ask specific questions to clarify"
+        },
+        {
+          "turn": 2,
+          "user_message": "I'm tired and a bit uncomfortable",
+          "expected_behavior": "System should probe for specific symptoms"
+        },
+        {
+          "turn": 3,
+          "user_message": "Nothing specific, just general malaise",
+          "expected_behavior": "System should indicate low confidence and suggest monitoring"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "General Malaise",
+        "confidence_range": "0.2-0.4",
+        "severity": "mild"
+      }
+    },
+    {
+      "id": "test_012",
+      "name": "Emergency - Chest Pain",
+      "description": "User reports potential emergency symptoms",
+      "conversation_flow": [
+        {
+          "turn": 1,
+          "user_message": "I have severe chest pain",
+          "expected_behavior": "System should immediately recognize emergency and advise calling 911"
+        },
+        {
+          "turn": 2,
+          "user_message": "It's spreading to my arm and I'm sweating",
+          "expected_behavior": "System should strongly urge immediate emergency care"
+        },
+        {
+          "turn": 3,
+          "user_message": "Should I go to the hospital?",
+          "expected_behavior": "System should emphatically recommend calling emergency services"
+        }
+      ],
+      "expected_prediction": {
+        "illness": "Potential Cardiac Event",
+        "confidence_range": "N/A",
+        "severity": "emergency",
+        "note": "Should recommend immediate emergency care"
+      }
+    }
+  ],
+  "testing_instructions": {
+    "setup": [
+      "Ensure ngrok is running and forwarding to localhost:8000",
+      "Configure Retell AI agent with your ngrok URL",
+      "Verify OpenAI API key is configured in .env",
+      "Ensure Docker containers are running"
+    ],
+    "execution": [
+      "Use Retell AI's simulation feature",
+      "Input each user message from the conversation flow",
+      "Observe the agent's responses",
+      "Verify predictions match expected ranges"
+    ],
+    "validation_criteria": [
+      "Agent extracts symptoms correctly",
+      "Follow-up questions are relevant",
+      "Predictions are within expected confidence ranges",
+      "Severity assessments are appropriate",
+      "Emergency cases trigger urgent recommendations",
+      "Voice responses are natural and clear"
+    ]
+  }
+}

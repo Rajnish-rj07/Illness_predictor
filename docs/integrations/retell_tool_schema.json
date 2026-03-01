@@ -1,0 +1,37 @@
+{
+  "type": "function",
+  "function": {
+    "name": "predict_illness",
+    "description": "Predicts possible illnesses based on user's symptoms. Use this when the user has described multiple symptoms and you need to provide a medical prediction. Always gather at least 2-3 symptoms before calling this function.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "symptoms": {
+          "type": "string",
+          "description": "Comma-separated list of symptoms the user has described. Include severity and duration if mentioned. Example: 'severe headache for 2 days, high fever, nausea, sensitivity to light'",
+          "minLength": 5
+        },
+        "language": {
+          "type": "string",
+          "description": "Language code for the response. Use the same language the user is speaking.",
+          "enum": ["en", "es", "fr", "hi", "zh"],
+          "default": "en"
+        },
+        "urgency": {
+          "type": "string",
+          "description": "Urgency level based on symptoms described",
+          "enum": ["low", "moderate", "high", "emergency"],
+          "default": "moderate"
+        }
+      },
+      "required": ["symptoms"]
+    }
+  },
+  "server": {
+    "url": "https://abranchiate-amada-abdicative.ngrok-free.dev",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

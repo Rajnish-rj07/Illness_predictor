@@ -1,0 +1,53 @@
+# Kustomize configuration for easy deployment
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: illness-prediction
+
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - secrets.yaml
+  - postgres-deployment.yaml
+  - redis-deployment.yaml
+  - app-deployment.yaml
+  - ingress.yaml
+  - network-policy.yaml
+  - service-monitor.yaml
+
+# Common labels applied to all resources
+commonLabels:
+  app.kubernetes.io/name: illness-prediction
+  app.kubernetes.io/part-of: illness-prediction-system
+
+# Images to be patched (useful for different environments)
+images:
+  - name: illness-prediction
+    newName: ghcr.io/your-org/illness-prediction
+    newTag: latest
+
+# ConfigMap generator for environment-specific configs
+configMapGenerator:
+  - name: illness-prediction-env-config
+    literals:
+      - ENVIRONMENT=production
+
+# Secret generator (use with caution, prefer external secret management)
+secretGenerator:
+  - name: illness-prediction-generated-secrets
+    literals: []
+
+# Patches for different environments
+patchesStrategicMerge:
+  - |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: illness-prediction-app
+    spec:
+      replicas: 3
+
+# Replicas for different environments
+replicas:
+  - name: illness-prediction-app
+    count: 3

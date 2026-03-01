@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Common Cold - Simple Symptoms",
+    "description": "User reports basic cold symptoms",
+    "transcript": [
+      {
+        "role": "agent",
+        "content": "Hello! I'm here to help you understand your symptoms. What brings you in today?"
+      },
+      {
+        "role": "user",
+        "content": "I have a runny nose and I've been sneezing a lot"
+      },
+      {
+        "role": "agent",
+        "content": "I understand you have a runny nose and sneezing. Do you have any other symptoms like a sore throat or fever?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, I also have a sore throat"
+      },
+      {
+        "role": "agent",
+        "content": "I see. And do you have a fever or are you feeling tired?"
+      },
+      {
+        "role": "user",
+        "content": "No fever, just feeling tired"
+      }
+    ]
+  },
+  {
+    "name": "Influenza - Fever and Body Aches",
+    "description": "User reports flu-like symptoms with fever",
+    "transcript": [
+      {
+        "role": "agent",
+        "content": "Hello! I'm here to help you understand your symptoms. What brings you in today?"
+      },
+      {
+        "role": "user",
+        "content": "I have a high fever and body aches"
+      },
+      {
+        "role": "agent",
+        "content": "I'm sorry to hear that. When did these symptoms start?"
+      },
+      {
+        "role": "user",
+        "content": "It started two days ago. I also have a headache and chills"
+      },
+      {
+        "role": "agent",
+        "content": "Do you have any respiratory symptoms like a cough?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, I have a dry cough"
+      }
+    ]
+  },
+  {
+    "name": "Migraine - Severe Headache",
+    "description": "User describes migraine symptoms",
+    "transcript": [
+      {
+        "role": "agent",
+        "content": "Hello! I'm here to help you understand your symptoms. What brings you in today?"
+      },
+      {
+        "role": "user",
+        "content": "I have a severe headache on one side of my head"
+      },
+      {
+        "role": "agent",
+        "content": "I'm sorry you're experiencing that. Does light bother you or do you feel nauseous?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, light bothers me and I feel nauseous"
+      },
+      {
+        "role": "agent",
+        "content": "How long has this been going on?"
+      },
+      {
+        "role": "user",
+        "content": "It's been going on for about 4 hours"
+      }
+    ]
+  },
+  {
+    "name": "Allergies - Seasonal Symptoms",
+    "description": "User reports allergy symptoms",
+    "transcript": [
+      {
+        "role": "agent",
+        "content": "Hello! I'm here to help you understand your symptoms. What brings you in today?"
+      },
+      {
+        "role": "user",
+        "content": "My eyes are itchy and watery, and I keep sneezing"
+      },
+      {
+        "role": "agent",
+        "content": "When do these symptoms occur? Is there a particular time or place?"
+      },
+      {
+        "role": "user",
+        "content": "It happens mostly when I'm outside. No fever"
+      },
+      {
+        "role": "agent",
+        "content": "Do you have any nasal congestion?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, my nose is congested too"
+      }
+    ]
+  },
+  {
+    "name": "Gastroenteritis - Stomach Issues",
+    "description": "User reports stomach problems",
+    "transcript": [
+      {
+        "role": "agent",
+        "content": "Hello! I'm here to help you understand your symptoms. What brings you in today?"
+      },
+      {
+        "role": "user",
+        "content": "I have stomach pain and diarrhea"
+      },
+      {
+        "role": "agent",
+        "content": "When did this start? Did you eat anything unusual?"
+      },
+      {
+        "role": "user",
+        "content": "Started yesterday after eating. I also feel nauseous"
+      },
+      {
+        "role": "agent",
+        "content": "Have you vomited or do you have a fever?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, I vomited once and have a slight fever"
+      }
+    ]
+  },
+  {
+    "name": "Strep Throat - Severe Throat Pain",
+    "description": "User reports severe throat pain",
+    "transcript": [
+      {
+        "role": "agent",
+        "content": "Hello! I'm here to help you understand your symptoms. What brings you in today?"
+      },
+      {
+        "role": "user",
+        "content": "My throat hurts really bad when I swallow"
+      },
+      {
+        "role": "agent",
+        "content": "Do you have a fever? Can you see any redness or white spots in your throat?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, I have a fever and my throat looks red with white spots"
+      },
+      {
+        "role": "agent",
+        "content": "Do you have a cough or are your neck glands swollen?"
+      },
+      {
+        "role": "user",
+        "content": "No cough, but my neck glands are swollen"
+      }
+    ]
+  },
+  {
+    "name": "UTI - Urinary Symptoms",
+    "description": "User reports urinary tract infection symptoms",
+    "transcript": [
+      {
+        "role": "agent",
+        "content": "Hello! I'm here to help you understand your symptoms. What brings you in today?"
+      },
+      {
+        "role": "user",
+        "content": "I have pain when I urinate and need to go frequently"
+      },
+      {
+        "role": "agent",
+        "content": "Is there a burning sensation? How does your urine look?"
+      },
+      {
+        "role": "user",
+        "content": "Yes, there's a burning sensation and my urine looks cloudy"
+      },
+      {
+        "role": "agent",
+        "content": "Do you have a fever or any back pain?"
+      },
+      {
+        "role": "user",
+        "content": "No fever or back pain, just the urinary symptoms"
+      }
+    ]
+  },
+  {
+    "name": "Emergency - Chest Pain",
+    "description": "User reports potential emergency symptoms",
+    "transcript": [
+      {
+        "role": "agent",
+        "content": "Hello! I'm here to help you understand your symptoms. What brings you in today?"
+      },
+      {
+        "role": "user",
+        "content": "I have severe chest pain"
+      },
+      {
+        "role": "agent",
+        "content": "This sounds serious. Is the pain spreading anywhere? Are you sweating?"
+      },
+      {
+        "role": "user",
+        "content": "It's spreading to my arm and I'm sweating"
+      },
+      {
+        "role": "agent",
+        "content": "This could be a medical emergency. You should call 911 or go to the emergency room immediately."
+      },
+      {
+        "role": "user",
+        "content": "Should I go to the hospital?"
+      }
+    ]
+  }
+]

@@ -1,0 +1,48 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: illness-prediction-staging
+
+bases:
+  - ../../
+
+namePrefix: staging-
+
+commonLabels:
+  environment: staging
+
+images:
+  - name: illness-prediction
+    newName: ghcr.io/your-org/illness-prediction
+    newTag: staging
+
+replicas:
+  - name: illness-prediction-app
+    count: 2
+
+patchesStrategicMerge:
+  - |-
+    apiVersion: apps/v1
+    kind: Deployment
+    metadata:
+      name: illness-prediction-app
+    spec:
+      template:
+        spec:
+          containers:
+          - name: app
+            resources:
+              requests:
+                memory: "256Mi"
+                cpu: "250m"
+              limits:
+                memory: "1Gi"
+                cpu: "1000m"
+
+configMapGenerator:
+  - name: illness-prediction-config
+    behavior: merge
+    literals:
+      - DEBUG=true
+      - LOG_LEVEL=DEBUG
+      - ENVIRONMENT=staging
