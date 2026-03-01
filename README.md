@@ -469,8 +469,8 @@ This system is designed for educational and informational purposes only. It is N
 
 For questions, issues, or collaboration opportunities:
 
-- GitHub Issues: [Create an issue](https://github.com/Rajnish-rj07/illness-prediction-system/issues)
-- Email: rajnishmaurya7778@gmail.com
+- GitHub Issues: [Create an issue](https://github.com/yourusername/illness-prediction-system/issues)
+- Email: your.email@example.com
 - Documentation: [Full Documentation](docs/)
 
 ## 🗺️ Roadmap
